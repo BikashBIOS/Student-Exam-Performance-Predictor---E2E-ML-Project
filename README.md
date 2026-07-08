@@ -27,6 +27,7 @@
   - [Azure Container Registry + Web App](#azure-container-registry--web-app)
 - [Dockerfile Explained](#dockerfile-explained)
 - [Data Flow: End-to-End Architecture](#data-flow-end-to-end-architecture)
+- [Results](#results)
 
 ---
 
@@ -1222,4 +1223,16 @@ User fills HTML form (home.html)
 
 ---
 
+## Results
+
+
+##### Results available in Repo -> Results.pdf
+
+---
+
+```
+
+
 *Built with [scikit-learn](https://scikit-learn.org/), [XGBoost](https://xgboost.readthedocs.io/), [CatBoost](https://catboost.ai/), [Flask](https://flask.palletsprojects.com/), [Docker](https://www.docker.com/), AWS & Azure.*
+
+*Built with 💖 by BikashBIOS*
