@@ -1,8 +1,131 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Student Exam Performance Indicator</title>
+<style>
+  * { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    min-height: 100vh;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 50%, #db2777 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 16px;
+  }
+
+  .login {
+    background: #ffffff;
+    width: 100%;
+    max-width: 560px;
+    border-radius: 18px;
+    padding: 40px 36px 36px;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.25);
+  }
+
+  h1 {
+    text-align: center;
+    color: #1f2937;
+    margin: 0 0 6px;
+    font-size: 22px;
+  }
+
+  form h1 {
+    font-size: 18px;
+    color: #4f46e5;
+    margin: 0 0 24px;
+    padding-bottom: 12px;
+    border-bottom: 2px solid #ede9fe;
+  }
+
+  form h1 legend {
+    font-weight: 600;
+  }
+
+  .mb-3 {
+    margin-bottom: 18px;
+  }
+
+  .form-label {
+    display: block;
+    font-size: 13.5px;
+    font-weight: 600;
+    color: #374151;
+    margin-bottom: 6px;
+  }
+
+  .form-control {
+    width: 100%;
+    padding: 11px 14px;
+    font-size: 14.5px;
+    border: 1.5px solid #d1d5db;
+    border-radius: 10px;
+    background-color: #f9fafb;
+    color: #1f2937;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  }
+
+  .form-control:focus {
+    outline: none;
+    border-color: #7c3aed;
+    box-shadow: 0 0 0 3px rgba(124, 58, 237, 0.15);
+    background-color: #ffffff;
+  }
+
+  select.form-control {
+    appearance: none;
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%236b7280' stroke-width='2'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 12px center;
+    background-size: 16px;
+    cursor: pointer;
+  }
+
+  .btn {
+    width: 100%;
+    padding: 13px;
+    font-size: 15.5px;
+    font-weight: 600;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+  }
+
+  .btn-primary {
+    background: linear-gradient(135deg, #7c3aed, #db2777);
+    color: #ffffff;
+    box-shadow: 0 8px 20px rgba(124, 58, 237, 0.35);
+  }
+
+  .btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 24px rgba(124, 58, 237, 0.45);
+  }
+
+  .btn-primary:active {
+    transform: translateY(0);
+  }
+
+  h2 {
+    text-align: center;
+    margin-top: 26px;
+    padding: 16px;
+    font-size: 17px;
+    color: #4f46e5;
+    background: #f5f3ff;
+    border: 1.5px solid #ddd6fe;
+    border-radius: 12px;
+  }
+</style>
+</head>
 <body>
     <div class="login">
        <h1>Student Exam Performance Indicator</h1>
-   
+
        <form action="{{ url_for('predict_datapoint')}}" method="post">
         <h1>
             <legend>Student Exam Performance Prediction</legend>
@@ -81,7 +204,7 @@
             <label class="form-label">Test preparation Course</label>
             <select class="form-control" name="test_preparation_course" placeholder="Enter you Course"
                 required>
-                <option class="placeholder" selected disabled value="">Select Test_course</option>
+                <option class="placeholder" selected disabled value="">Select Test Course</option>
                 <option value="none">
                     None
                 </option>
@@ -93,7 +216,7 @@
         <div class="mb-3">
             <label class="form-label">Writing Score out of 100</label>
             <input class="form-control" type="number" name="reading_score"
-                placeholder="Enter your Reading score" min='0' max='100' />
+                placeholder="Enter your Writing score" min='0' max='100' />
         </div>
         <div class="mb-3">
             <label class="form-label">Reading Score out of 100</label>
@@ -105,7 +228,7 @@
         </div>
     </form>
     <h2>
-       THE  prediction is {{results}}
+       The Maths Score Prediction is {{results}}
     </h2>
    <body>
 </html>
